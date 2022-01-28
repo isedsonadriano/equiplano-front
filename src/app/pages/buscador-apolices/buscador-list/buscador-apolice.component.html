@@ -1,0 +1,67 @@
+
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card">
+        <div class=" card-header">
+          <h4 class=" card-title">Buscador de Apólice</h4>
+        </div>
+
+        <div class=" card-body">
+            <div class="card-body">
+              <div class="form-row">
+                
+                <div class="form-group col-md-4">
+                  <label for="decricao">Informe o número da apólice:</label>
+                  <form (submit)="search()">
+                    <input type="text" class="form-control" name="query" [(ngModel)]="queryString">
+                    <button type="submit" class="btn btn-danger btn-round">Pesquisar</button>
+                 </form>
+                 
+                  
+                </div>
+              </div>
+            </div>
+         
+        </div>
+       
+        <div class=" card-body">
+          <div>
+            <table class=" table tablesorter" id="">
+              <thead class=" text-primary">
+                <tr>
+                  <th>ID Apólice</th>
+                  <th>Status</th>
+                  <th>Vencimento</th>
+                  <th>Placa</th>
+                  <th>Valor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let apolice of apolices">
+                  <td>{{apolice.id}}</td>
+                  <td *ngIf="apolice.vencida">
+                    <button class=" btn btn-danger btn-sm mr-1">Vencida</button>
+                  </td>
+                  <td *ngIf="!apolice.vencida">
+                    <button class=" btn btn-success btn-sm mr-1">Ativa</button>
+                  </td>
+                  <td *ngIf="apolice.vencida">
+                    Vencida há  {{apolice.vencimento}} dias
+                  </td>
+                  <td *ngIf="!apolice.vencida">
+                    Em {{apolice.vencimento}} dias
+                  </td>
+                 
+                  <td>{{apolice.placa}}</td>
+                  <td>R${{apolice.valor}}</td>
+                  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card">
+        <div class=" card-header">
+          <h4 class=" card-title">Apólices</h4>
+        </div>
+        <p>
+          <a class="ml-4" [routerLink]="['/apolices/new']"><button class="btn btn-danger btn-sm">Nova Apólice</button></a>
+        </p>
+        <div class=" card-body">
+          <div >     
+            
+            <table class=" table tablesorter" id="">
+              <thead class=" text-primary">
+                <tr>
+                  <th>ID</th>
+                  <th>Número</th>
+                  <th>Início vigência</th>
+                  <th>Fim Vigência</th>
+                  <th>Placa</th>
+                  <th>Valor</th>
+                  
+                  <th class=" text-center">Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let vigencia of resources">
+                  <td>{{vigencia.id}}</td>
+                  <td>{{vigencia.numero}}</td>
+                  <td>{{vigencia.inicioVigencia}}</td>
+                  <td>{{vigencia.fimVigencia}}</td>
+                  <td>{{vigencia.placa}}</td>
+                  <td>R${{vigencia.valor}}</td>
+                  <td>
+                    <a>
+                      <button class="btn btn-info btn-icon btn-sm " rel="tooltip" type="button" 
+                          data-original-title="" title=""><i class="fa fa-user" (click)="edit(vigencia.id)"></i></button>
+                   </a>
+                    <a >
+                       <button class="btn btn-danger btn-icon btn-sm " rel="tooltip" type="button" 
+                          data-original-title="" title=""><i class="fa fa-times" (click)="deleteResource(vigencia)"></i></button>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

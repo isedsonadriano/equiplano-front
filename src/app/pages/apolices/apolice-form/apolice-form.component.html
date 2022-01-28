@@ -1,0 +1,58 @@
+<div class=" content">
+  <div class=" row">
+    <div class=" col-md-12">
+      <div class=" card">
+        <div class=" card-header">
+          <h4 class=" card-title">Nova Apólice</h4>
+        </div>
+       
+        <div class=" card-body">
+          <form [formGroup]="resourceForm" (submit)="submitForm()">
+
+            <div class="card-body">
+              <div class="form-row">
+                
+                <div class="form-group col-md-4">
+                  <label for="decricao">Início vigência</label>
+                  <input type="text" class="form-control" id="inicioVigencia" formControlName="inicioVigencia" mask="d0/M0/0000" [leadZeroDateTime]="true">
+                  <app-form-field-error [form-control]="resourceForm.get('inicioVigencia')"></app-form-field-error>
+                </div>
+        
+                <div class="form-group col-md-4">
+                  <label for="decricao">Fim vigência</label>
+                  <input type="text" class="form-control" id="fimVigencia" formControlName="fimVigencia" mask="d0/M0/0000">
+                  <app-form-field-error [form-control]="resourceForm.get('fimVigencia')"></app-form-field-error>
+                </div>
+
+              </div>
+
+              <div class="form-row">
+                  
+                <div class="form-group col-md-4">
+                  <label for="decricao">Placa</label>
+                  <input type="text" class="form-control" id="placa" formControlName="placa" mask="AAA-0000">
+                  <app-form-field-error [form-control]="resourceForm.get('placa')"></app-form-field-error>
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label for="decricao">Valor</label>
+                  <input type="text" class="form-control" id="placa" formControlName="valor" mask="separator.2" thousandSeparator=".">
+                  <app-form-field-error [form-control]="resourceForm.get('valor')"></app-form-field-error>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="row">
+              <div class="update ml-auto mr-auto">
+                <button type="submit" class="btn btn-danger btn-round" [disabled]="resourceForm.invalid">Salvar</button>
+              </div>
+            </div>
+          
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

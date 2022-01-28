@@ -1,0 +1,59 @@
+<div class=" content">
+    <div class=" row">
+      <div class=" col-md-12">
+        <div class=" card">
+          <div class=" card-header">
+            <h4 class=" card-title">Novo Associado</h4>
+          </div>
+         
+          <div class=" card-body">
+            <form [formGroup]="resourceForm" (submit)="submitForm()">
+
+              <div class="card-body">
+                <div class="form-row">
+                  
+                  <div class="form-group col-md-4">
+                    <label for="name">Nome</label>
+                    <input type="text" class="form-control" id="nome" formControlName="nome">
+                    <app-form-field-error [form-control]="resourceForm.get('nome')"></app-form-field-error>
+                  </div>
+          
+                  <div class="form-group col-md-4">
+                    <label for="decricao">CPF</label>
+                    <input type="text" class="form-control" id="cpf" formControlName="cpf" [textMask]="{mask: MASKS.cpf.textMask}">
+                    <app-form-field-error [form-control]="resourceForm.get('cpf')"></app-form-field-error>
+                  </div>
+
+                </div>
+
+                <div class="form-row">
+
+                  <div class="form-group col-md-4">
+                    <label for="decricao">Cidade</label>
+                    <input type="text" class="form-control" id="cidade" formControlName="cidade" >
+                    <app-form-field-error [form-control]="resourceForm.get('cidade')" ></app-form-field-error>
+                  </div>
+                  
+                  <div class="form-group col-md-4">
+                    <label for="name">UF</label>
+                    <input type="text" class="form-control" id="uf" formControlName="uf">
+                    <app-form-field-error [form-control]="resourceForm.get('uf')"></app-form-field-error>
+                  </div>
+
+                </div>
+
+
+              </div>
+
+              <div class="row">
+                <div class="update ml-auto mr-auto">
+                  <button type="submit" class="btn btn-danger btn-round" [disabled]="resourceForm.invalid">Registrar</button>
+                </div>
+              </div>
+            
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
