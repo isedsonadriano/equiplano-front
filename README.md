@@ -1,7 +1,7 @@
 # boasaude - front
 
 
-* Esse é parte do projeto final da especialização de arquitetura de software distribuído da Puc Minas;
+* Esse é o frontend angular da aplicação equiplano
 
 
 
